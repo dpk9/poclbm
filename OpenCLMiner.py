@@ -9,7 +9,7 @@ from time import sleep, time
 from util import if_else, uint32, Object, bytereverse, patch, tokenize
 import numpy as np
 import sys
-
+import os
 
 PYOPENCL = False
 OPENCL = False
@@ -307,7 +307,7 @@ class OpenCLMiner(Miner):
 									'WinterPark',
 									'BeaverCreek']:
 				self.defines += ' -DBFI_INT'
-
+		print '\n\nCURRENT DIR:     {}\n\n'.format(os.getcwd())
 		kernel_file = open('phatk.cl', 'r')
 		kernel = kernel_file.read()
 		kernel_file.close()
